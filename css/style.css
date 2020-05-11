@@ -1,0 +1,45 @@
+body
+{
+  background: #8b0000;
+}
+
+.menu
+{
+  background-color: #ffffff;
+}
+
+.menu ul
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu li
+{
+  font-family: Arial;
+  font-style: bold;
+  list-style: none;
+}
+
+a
+{
+  color: #8b0000;
+  text-decoration: none;
+}
+
+a:hover
+{
+  color: blue;
+  text-decoration: underline;
+}
+
+.site-title, .site-subtitle
+{
+  color: whitesmoke;
+  text-align: center;
+}
+
+.site-subtitle
+{
+  font-style: italic;
+}
