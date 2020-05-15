@@ -1,11 +1,75 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body
 {
-  background: #8b0000;
+  background-image: url(../img/background.jpg);
+  background-size: 100vw 100vh;
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
 }
+
+@media (min-width: 450px)
+{
+  body
+  {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 700px)
+{
+  body
+  {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  body
+  {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 2000px)
+{
+  body
+  {
+    font-size: 30px;
+  }
+}
+
+header
+{
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+@media (max-width: 500px)
+{
+  header
+  {
+    height: 60vh;
+  }
+}
+
+/* Menu */
 
 .menu
 {
-  background-color: #ffffff;
+  background-color: whitesmoke;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
 }
 
 .menu ul
@@ -16,30 +80,199 @@ body
 
 .menu li
 {
-  font-family: Arial;
   font-style: bold;
   list-style: none;
 }
 
-a
+.menu a
 {
-  color: #8b0000;
+  color: black;
+  display: block;
+  font-size: 1em;
+  padding: 10px 30px;
   text-decoration: none;
+  transition: text-shadow 0.5s;
 }
 
-a:hover
+.menu a:hover, .menu a:active
 {
-  color: blue;
-  text-decoration: underline;
+  text-shadow: 0px 0px 5px rgb(200,0,0);
 }
 
-.site-title, .site-subtitle
+/* First View */
+
+.name
+{
+  animation: linear 1s intro-name forwards;
+}
+
+@keyframes intro-name
+{
+  0%
+  {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60%
+  {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+  70%
+  {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  80%
+  {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  90%
+  {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  100%
+  {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.site-title
 {
   color: whitesmoke;
+  font-family: 'Caveat', cursive;
+  font-size: 6em;
   text-align: center;
 }
 
 .site-subtitle
 {
+  color: whitesmoke;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.4em;
   font-style: italic;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.section-title
+{
+  color: whitesmoke;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2em;
+  line-height: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/* Projects Section */
+
+.projects
+{
+  background-color: rgb(150,0,0);
+  padding: 1em;
+}
+
+.projects .grid
+{
+  align-content: center;
+  display: grid;
+  gap: 2em;
+  justify-content: center;
+}
+  
+@media (min-width: 700px)
+{
+  .projects .grid
+  {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+  
+@media (min-width: 1050px) 
+{
+  .projects .grid
+  {
+    grid-template-columns: repeat(3, 300px);
+    /*height: calc(100vh - 8em - 48px); */
+  }
+}
+  
+.projects figure
+{
+  text-align: center;
+}
+
+.img-projects
+{
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  object-position: left bottom;
+  transition: transform 1s;
+}
+
+.img-projects:hover
+{
+  transform: scale(1.2);
+}
+
+.grid figcaption
+{
+  color: whitesmoke;
+}
+
+/* About Section */
+
+.about
+{
+  background-color: rgb(200,0,0);
+  padding: 1em;
+}
+
+/* Contact Section */
+
+.contact
+{
+  background-color: rgb(150,0,0);
+}
+
+.contact .grid
+{
+  align-content: center;
+  display: grid;
+  gap: 4em;
+  justify-content: center;
+}
+
+@media (min-width: 700px)
+{
+  .contact .grid
+  {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 1200px)
+{
+  .contact .grid
+  {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.contact a
+{
+  color: whitesmoke;
+  font-size: 8em;
+  transition: text-shadow 1s;
+}
+
+.contact a:hover, .contact a:active
+{
+  text-decoration: none;
+  text-shadow: 7px 7px 5px black;
 }
