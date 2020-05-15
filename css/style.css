@@ -103,7 +103,7 @@ header
 
 .name
 {
-  animation: linear 1s intro-name forwards;
+  animation: linear 1.5s intro-name forwards;
 }
 
 @keyframes intro-name
@@ -113,24 +113,14 @@ header
     transform: scale(0);
     opacity: 0;
   }
-  60%
-  {
-    transform: scale(1.1);
-    opacity: 0.6;
-  }
-  70%
-  {
-    transform: scale(0.9);
-    opacity: 0.7;
-  }
   80%
   {
-    transform: scale(1.05);
+    transform: scale(1.1);
     opacity: 0.8;
   }
   90%
   {
-    transform: scale(0.95);
+    transform: scale(0.9);
     opacity: 0.9;
   }
   100%
@@ -200,7 +190,43 @@ header
     /*height: calc(100vh - 8em - 48px); */
   }
 }
-  
+
+.flip-card
+{
+  height: 13.5em;
+  perspective: 500px;
+}
+
+.card
+{
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 2s;
+}
+
+.flip-card:hover .card
+{
+    transform: rotateY(180deg) scale(1.2);
+}
+
+.card-front, .card-back
+{
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.card-back
+{
+  align-items: center;
+  background-color: rgba(255, 255, 255, .7);
+  display: flex;
+  height: 12em;
+  justify-content: center;
+  transform: rotateY(180deg);
+  transition: transform 1s;
+  width: 12em;
+}
+
 .projects figure
 {
   text-align: center;
@@ -208,16 +234,11 @@ header
 
 .img-projects
 {
-  height: 300px;
-  width: 300px;
+  height: 12em;
+  width: 12em;
   object-fit: cover;
   object-position: left bottom;
   transition: transform 1s;
-}
-
-.img-projects:hover
-{
-  transform: scale(1.2);
 }
 
 .grid figcaption
@@ -231,6 +252,35 @@ header
 {
   background-color: rgb(200,0,0);
   padding: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.about figure
+{
+  float: right;
+  margin-left: 1.5em;
+  transition: 1s;
+}
+
+.about figure:hover
+{
+  transform: scale(1.2);
+}
+
+.about img
+{
+  border-radius: 50%;
+  height: 12em;
+  width: 12m;
+}
+
+.about p
+{
+  color: whitesmoke;
+  margin-bottom: 1em;
+  text-align: justify;
+  text-indent: 1.5em;
 }
 
 /* Contact Section */
