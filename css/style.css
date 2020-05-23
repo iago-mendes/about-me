@@ -164,11 +164,11 @@ header
   justify-content: center;
 }
   
-@media (min-width: 700px)
+@media (min-width: 600px)
 {
   .projects .grid
   {
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(2, 12em);
   }
 }
   
@@ -176,8 +176,7 @@ header
 {
   .projects .grid
   {
-    grid-template-columns: repeat(3, 300px);
-    /*height: calc(100vh - 8em - 48px); */
+    grid-template-columns: repeat(3, 12em);
   }
 }
 
@@ -185,6 +184,7 @@ header
 {
   height: 13.5em;
   perspective: 500px;
+  width: 12em;
 }
 
 .card
@@ -192,6 +192,7 @@ header
   position: relative;
   transform-style: preserve-3d;
   transition: transform 2s;
+  width: 12em;
 }
 
 .flip-card:hover .card
